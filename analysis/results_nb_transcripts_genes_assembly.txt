@@ -1,0 +1,9 @@
+The meta-assembly contains :
+	 62314 genes
+	 220907 transcripts
+	 1363461 exons 
+
+In these, there are :
+	58645 known genes (94.11%)
+	208310 known transcripts (94.30%)
+	29354 unique exons (2.15%)
