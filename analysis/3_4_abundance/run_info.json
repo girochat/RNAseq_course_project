@@ -1,0 +1,13 @@
+{
+	"n_targets": 220907,
+	"n_bootstraps": 100,
+	"n_processed": 33442327,
+	"n_pseudoaligned": 31063617,
+	"n_unique": 6310932,
+	"p_pseudoaligned": 92.9,
+	"p_unique": 18.9,
+	"kallisto_version": "0.46.0",
+	"index_version": 10,
+	"start_time": "Sun Dec 11 15:06:36 2022",
+	"call": "kallisto quant -i /data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/data/meta_assembly.k_fai -o /data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/analysis/3_4_abundance -t 2 -b 100 --rf-stranded 3_4_R1.fastq.gz 3_4_R2.fastq.gz"
+}

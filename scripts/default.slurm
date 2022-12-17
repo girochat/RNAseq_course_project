@@ -2,8 +2,8 @@
 
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=8G
-#SBATCH --time=01:00:00
-#SBATCH --job-name=align_reads
+#SBATCH --time=00:30:00
+#SBATCH --job-name=analyse_quant
 #SBATCH --mail-user=giliane.rochat@students.unibe.ch
 #SBATCH --mail-type=end,fail
 #SBATCH --error=error_%j.e
