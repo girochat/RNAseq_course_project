@@ -3,7 +3,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=1M
 #SBATCH --time=00:15:00
-#SBATCH --job-name=count_transcipts_genes
+#SBATCH --job-name=count_transcripts
 #SBATCH --mail-user=giliane.rochat@students.unibe.ch
 #SBACTH --mail-type=end,fail
 #SBATCH --error=error_%j.e
@@ -57,14 +57,19 @@ cat $HOME/data/meta_assembly.gtf | awk 'BEGIN{
         }
 
 }END{
-        print "The meta-assembly contains :"
+	# count the number of novel genes and transcripts
+	nb_novel_genes=(nb_genes-nb_known_genes)
+	nb_novel_transcripts=(nb_transcripts-nb_known_transcripts)
+       
+	# display the statistics
+	print "The meta-assembly contains :"
         print "\t",nb_genes,"genes"
 	print "\t",nb_transcripts,"transcripts"
         print "\t",nb_exons,"exons","\n"
 	print "In these, there are :"
-        printf "\t" nb_known_genes " known genes (%.2f%%)\n",nb_known_genes/nb_genes*100
-        printf "\t" nb_known_transcripts " known transcripts (%.2f%%)\n",nb_known_transcripts/nb_transcripts*100
-	printf "\t" nb_unique_exons " unique exons (%.2f%%)\n",nb_unique_exons/nb_exons*100
-}' > results_nb_transcripts_genes_assembly.txt
+        printf "\t" nb_novel_genes " novel genes (%.2f%%)\n",nb_novel_genes/nb_genes*100
+        printf "\t" nb_novel_transcripts " novel transcripts (%.2f%%)\n",nb_novel_transcripts/nb_transcripts*100
+	printf "\t" nb_unique_exons " transcripts with a unique exon (%.2f%%)\n",nb_unique_exons/nb_exons*100
+}' > $HOME/analysis/results_stat_assembly.txt
 
 

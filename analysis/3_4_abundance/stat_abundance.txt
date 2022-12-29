@@ -1,0 +1,10 @@
+The sum of the TPM values is : 1e+06 
+
+After the quantification of reads, there are :
+	29493 genes
+	6195 novel genes (21.00%)
+
+	103192 transcripts
+	10417 novel transcripts (10.09%)
+	4561 novel transcripts with a unique exon (43.78%)
+

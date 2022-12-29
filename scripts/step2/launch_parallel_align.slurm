@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#SBATCH --array=0-2
+#SBATCH --array=0-5 %3
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G
 #SBATCH --time=00:45:00
@@ -12,7 +12,8 @@
 # path to the project directory
 HOME=/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat
 
-# store paired files passed in argument in an array ; all read1 files (R1 in file path) are expected to come first, then all read2 files (R2 in file path)
+# store paired files passed in argument in an array
+# Note : read1 files (R1 in file path) are expected to come first, then read2 files (R2 in file path)
 paired_files=($@)
 
 # get the number of paired files to align

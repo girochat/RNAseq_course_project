@@ -20,6 +20,7 @@ do
 	output_name=$(basename ${BAM_file} | cut -d "." -f 1)
 	
 	# do the assembly with StringTie
+	# option -o : output file
 	# option --rf : first-strand stranded library
 	# option -G : reference annotation to guide the assembly
 	stringtie -o $HOME/data/${output_name}.gtf --rf -G $HOME/data/reference_annotation_ALL.gtf ${BAM_file}
