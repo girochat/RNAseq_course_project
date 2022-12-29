@@ -17,8 +17,7 @@ module add UHTS/Analysis/BEDTools/2.29.2
 # option -u : outputs transcript that matches a TSS only once
 # option -s : compares transcript and TSS on the same strand only  
 bedtools intersect \
-	-a $HOME/data/meta_assembly.bed \
-	-b $HOME/data/TSS_human_pruned.bed \
-	-wb \
+	-a $HOME/data/meta_assembly_TSS.bed \
+	-b $HOME/data/TSS_hg38_liftover_pruned.bed \
 	-u \
 	-s > $HOME/analysis/transcripts_with_TSS.tsv

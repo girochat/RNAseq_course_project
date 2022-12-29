@@ -14,7 +14,7 @@ HOME=/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat
 module add UHTS/Analysis/BEDTools/2.29.2
 
 # find transcripts that overlap intergenic genomic regions
-# option -v : output transcripts that do NOT overlap 
+# option -v : output transcripts that do NOT overlap the reference annotation
 # option -s : compare coordinates for sequences on the same strand only
 bedtools intersect \
 	-a $HOME/data/meta_assembly.bed \

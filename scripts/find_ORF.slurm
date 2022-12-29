@@ -16,5 +16,5 @@ module add SequenceAnalysis/GenePrediction/cpat/1.2.4
 # find all protein-coding transcripts using CPAT
 # option -x : hexamer table of the human genome provided by CPAT
 # option -d : logit model of the human genome provided by CPAT
-cpat.py -x $HOME/data/Human_Hexamer.tsv -d $HOME/data/Human_logitModel.RData -g $HOME/data/meta_assembly.fa -o protein_coding_transcript
+cpat.py -x $HOME/data/Human_Hexamer.tsv -d $HOME/data/Human_logitModel.RData -g $HOME/data/meta_assembly.fa -o $HOME/analysis/transcripts_ORF
 

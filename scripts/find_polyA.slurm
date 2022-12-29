@@ -17,7 +17,7 @@ module add UHTS/Analysis/BEDTools/2.29.2
 # option -u : outputs transcript that matches a polyA site only once
 # option -s : compares transcript and polyA site on the same strand only  
 bedtools intersect \
-	-a $HOME/data/meta_assembly.bed \
+	-a $HOME/data/meta_assembly_polyA.bed \
 	-b $HOME/data/polyAsite_human_pruned.bed \
 	-u \
-	-s > $HOME/analysis/transcripts_polyA.tsv
+	-s > $HOME/analysis/transcripts_with_polyA.tsv
