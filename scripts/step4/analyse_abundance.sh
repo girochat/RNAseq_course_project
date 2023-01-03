@@ -34,11 +34,11 @@ do
 			{
 				nb_novel_genes += 1
 			}
-			if ($4 == 1)
-			{
-				nb_single_exon_T += 1
-			}
-		}			
+		}
+		if (($3 == 0)&&($4 == 1))
+		{
+			nb_single_exon_T++
+		}				
 	}END{ 
 		# get the number of novel transcripts
         	nb_novel_transcripts=(nb_transcripts-nb_known_transcripts)
@@ -53,7 +53,7 @@ do
        		print "\t" nb_transcripts,"transcripts"
 		printf "\t" nb_novel_transcripts " novel transcripts (%.2f%%)\n",nb_novel_transcripts/nb_transcripts*100
         	printf "\t" nb_single_exon_T " novel transcripts with a unique exon (%.2f%%)\n\n",nb_single_exon_T/nb_novel_transcripts*100
-	}' > $HOME/analysis/${file_ID}_abundance/stat_abundance.txt
+	}' > $HOME/analysis/abundance/${file_ID}/stat_abundance.txt
 done
 
 

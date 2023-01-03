@@ -6,4 +6,4 @@ The meta-assembly contains :
 In these, there are :
 	3669 novel genes (5.89%)
 	12597 novel transcripts (5.70%)
-	29354 transcripts with a unique exon (2.15%)
+	29354 transcripts with a unique exon (13.29%)

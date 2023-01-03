@@ -1,6 +1,6 @@
 load("/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/data/Human_logitModel.RData")
-test <- read.table(file="transcripts_ORF.dat",sep="\t",col.names=c("ID","mRNA","ORF","Fickett","Hexamer"))
+test <- read.table(file="/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/analysis/transcripts_ORF.dat",sep="\t",col.names=c("ID","mRNA","ORF","Fickett","Hexamer"))
 test$prob <- predict(mylogit,newdata=test,type="response")
 attach(test)
 output <- cbind("mRNA_size"=mRNA,"ORF_size"=ORF,"Fickett_score"=Fickett,"Hexamer_score"=Hexamer,"coding_prob"=test$prob)
-write.table(output,file="transcripts_ORF",quote=F,sep="\t",row.names=ID)
+write.table(output,file="/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/analysis/transcripts_ORF",quote=F,sep="\t",row.names=ID)

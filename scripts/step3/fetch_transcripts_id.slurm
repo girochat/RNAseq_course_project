@@ -32,7 +32,7 @@ cat $HOME/data/meta_assembly.gtf | awk 'BEGIN{ header=1 }{
 		# extract the ID of the transcript
         	transcript_id=substr($12, 2, length($12)-3) "\t"
         	
-		# extract the gene name if it exists otherwise the gene ID
+		# extract the gene name if it exists otherwise the gene ID; add the corresponding known status
 		if ($13 == "gene_name"){
                 	transcript_id = transcript_id substr($14, 2, length($14)-3) "\t" 1
         	}else{

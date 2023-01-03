@@ -69,7 +69,7 @@ cat $HOME/data/meta_assembly.gtf | awk 'BEGIN{
 	print "In these, there are :"
         printf "\t" nb_novel_genes " novel genes (%.2f%%)\n",nb_novel_genes/nb_genes*100
         printf "\t" nb_novel_transcripts " novel transcripts (%.2f%%)\n",nb_novel_transcripts/nb_transcripts*100
-	printf "\t" nb_unique_exons " transcripts with a unique exon (%.2f%%)\n",nb_unique_exons/nb_exons*100
-}' > $HOME/analysis/results_stat_assembly.txt
+	printf "\t" nb_unique_exons " transcripts with a unique exon (%.2f%%)\n",nb_unique_exons/nb_transcripts*100
+}' > results_stat_assembly.txt
 
 

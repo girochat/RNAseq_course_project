@@ -6,5 +6,5 @@ After the quantification of reads, there are :
 
 	102967 transcripts
 	10532 novel transcripts (10.23%)
-	4461 novel transcripts with a unique exon (42.36%)
+	655 novel transcripts with a unique exon (6.22%)
 
