@@ -15,4 +15,4 @@ awk 'BEGIN{ OFS = "\t" }
 		if ($3 == "transcript") {
 			print $1,$4,$5,substr($12, 2, length($12)-3),$6,$7
 		}
-	}' $1 > $HOME/data/${file_ID}.bed
+	}' $1 > $HOME/data/${file_ID}_2.bed
