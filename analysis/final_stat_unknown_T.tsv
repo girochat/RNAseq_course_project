@@ -1,0 +1,7 @@
+Type	TSS_polyA	intergenic	prot_cod_pot	lncRNA_pot	high_conf_PC	high_conf_PC_intergenic	high_conf_lncRNA	high_conf_lncRNA_intergenic
+Unknown transcripts	5359	968	9375	1551	16	8	16	0
+DE unknown transcripts	281	51	474	90	247	1	37	0
+DE unknown transcripts with single exon	2	27	12	4	0	0	0	0
+Unknown transcripts (%)	42.54	7.68	74.42	12.31	0.13	0.06	0.13	0
+DE unknown transcripts (%)	45.92	8.33	77.45	14.71	40.36	0.16	6.05	0
+DE unknown transcripts with single exon (%)	5.56	75	33.33	11.11	0	0	0	0

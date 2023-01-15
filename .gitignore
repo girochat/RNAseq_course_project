@@ -31,7 +31,6 @@ data/P3.k_fai
 data/meta_assembly.fa
 data/polyAsite_human.bed
 data/polyAsite_human_pruned.bed
-data/Human_logitModel.RData
 data/meta_assembly.bed
 data/meta_assembly_TSS.bed
 data/reference_annotation_ALL.bed
@@ -47,3 +46,13 @@ data/TSS_hg38_liftover.bed
 data/TSS_hg38_liftover_pruned.bed
 data/so_genes.sleuth
 data/so_transcripts.sleuth
+analysis/transcripts_biotype.tsv
+analysis/transcripts_ORF.dat
+analysis/transcripts_ORF.r
+analysis/transcripts_ORF.tsv
+scripts/step6/find_ORF.slurm
+data/reference_annotation_lncRNA.bed
+data/reference_annotation_lncRNA.gtf
+data/Human_cutoff.txt
+data/Human_Hexamer.tsv
+data/Human_logitModel.RData
