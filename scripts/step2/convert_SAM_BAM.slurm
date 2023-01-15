@@ -22,4 +22,5 @@ do
 	# convert and sort the SAM file
 	# option -o : specify output file
 	samtools sort -o $HOME/data/${name}.sorted.bam $file
-done 
+done
+ 

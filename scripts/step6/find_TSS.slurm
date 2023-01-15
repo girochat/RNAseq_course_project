@@ -20,4 +20,4 @@ bedtools intersect \
 	-a $HOME/data/meta_assembly_TSS.bed \
 	-b $HOME/data/TSS_hg38_liftover_pruned.bed \
 	-u \
-	-s > $HOME/analysis/transcripts_with_TSS.tsv
+	-s > $HOME/analysis/transcripts_TSS.tsv

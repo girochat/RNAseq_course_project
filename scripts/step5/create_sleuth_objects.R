@@ -15,13 +15,6 @@ library('sleuth')
 # get sleuth version
 packageVersion('sleuth')  # sleuth version 0.30.1
 
-if (!require("tidyverse", quietly = TRUE))
-  install.packages("tidyverse")
-if (!require("gridExtra", quietly = TRUE))
-  install.packages("gridExtra")
-library('tidyverse')
-library('gridExtra')
-
 
 set.seed("08122022")
 setwd("/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat")

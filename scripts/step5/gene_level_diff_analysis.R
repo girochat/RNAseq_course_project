@@ -1,5 +1,9 @@
 library(sleuth)
+
+if (!require("tidyverse", quietly = TRUE))
+  install.packages("tidyverse")
 library(tidyverse)
+
 if (!require("cowplot", quietly = TRUE))
   install.packages("cowplot")
 library(cowplot)

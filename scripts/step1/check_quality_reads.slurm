@@ -21,4 +21,3 @@ do
 	fastqc -o $HOME/analysis/FASTQC $file
 done
 
-

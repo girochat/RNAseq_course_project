@@ -29,3 +29,4 @@ bin/CPC2.py -r -i $HOME/data/meta_assembly.fa -o $HOME/analysis/transcripts_prot
 # remove CPC2 package
 cd $HOME
 rm -iR CPC2_standalone-1.0.1*
+

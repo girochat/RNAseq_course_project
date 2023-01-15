@@ -40,3 +40,4 @@ awk -v var=$1 'BEGIN{ OFS = "\t" }
 			}
 		}
 	}' $HOME/data/meta_assembly.gtf > $HOME/data/meta_assembly_$1.bed
+

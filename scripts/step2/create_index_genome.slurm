@@ -15,4 +15,3 @@ module add UHTS/Aligner/hisat/2.2.1
 # create the index of the reference genome with HISAT2
 hisat2-build -p 8 $HOME/../../references/human_genome.fa $HOME/../../references/index_genome
 
-

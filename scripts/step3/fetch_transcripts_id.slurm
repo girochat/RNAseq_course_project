@@ -11,6 +11,7 @@
 # path to the project directory
 HOME=/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat
 
+# create a table listing all transcripts of the meta-assembly with their gene name/ID, known status and if it has a single exon
 cat $HOME/data/meta_assembly.gtf | awk 'BEGIN{ header=1 }{
 	
 	# fetch each transcript ID and the corresponding gene name or ID

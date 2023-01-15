@@ -34,5 +34,5 @@ awk 'BEGIN{
         {
                 print array_value[element]
         }
-}' $HOME/data/meta_assembly.gtf > $HOME/analysis/meta_assembly_features.txt
+}' $HOME/data/meta_assembly.gtf > meta_assembly_features.txt
 

@@ -1,5 +1,11 @@
+if (!require("tidyverse", quietly = TRUE))
+  install.packages("tidyverse")
+if (!require("gridExtra", quietly = TRUE))
+  install.packages("gridExtra")
+library('tidyverse')
+library('gridExtra')
+
 library(sleuth)
-library(tidyverse)
 
 setwd("/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat")
 
@@ -46,7 +52,7 @@ head(DE_T)
 # save the table of differential expression in a tsv file
 write_tsv(DE_T, "analysis/transcripts_DE.tsv", col_names = T)
 
-# create table of statistics about the DE of transcripts
+# create table of statistics about the DE transcripts
 nb_DE <- c(length(T_significant_wt$target_id), sum(DE_T$known_status == 0))
 nb_filtered <- c(length(T_table_wt$target_id), NA )
 

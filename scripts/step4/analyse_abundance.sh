@@ -11,8 +11,6 @@
 # path to the project directory
 HOME=/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat
 
-file=($HOME/analysis/[3P]*_abundance/*_final_*.tsv)
-
 for file in $@
 do
 	# extract the file ID for the output	

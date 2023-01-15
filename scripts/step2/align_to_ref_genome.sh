@@ -12,7 +12,7 @@ HISAT2_INDEXES=/data/courses/rnaseq_course/lncRNAs/Project2/references/
 output_file=$(basename $1 | awk -F "_R" '{print $1}')
 
 # save the result of the alignment from STDERR 
-exec 2> $HOME/analysis/results_align_${output_file}.log
+exec 2> $HOME/analysis/alignment/results_align_${output_file}.log
 
 # align the paired-end reads to the human genome with HISAT2 
 # option --dta : better compatibility with StringTie

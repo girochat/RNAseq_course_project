@@ -26,4 +26,4 @@ awk 'BEGIN{
 	for (value in headers_value){
 		print headers_value[value]
 	} 
-}' $1 > $HOME/scripts/${file_ID}_headers.txt
+}' $1 > ${file_ID}_headers.txt

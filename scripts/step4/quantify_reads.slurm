@@ -37,3 +37,4 @@ do
 	kallisto quant -i $HOME/data/meta_assembly.k_fai -o $HOME/analysis/${file_ID}_abundance -t 2 -b 100 --rf-stranded ${paired_files[i]} ${paired_files[j]}
 
 done
+

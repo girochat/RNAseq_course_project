@@ -25,3 +25,4 @@ do
 	# option -G : reference annotation to guide the assembly
 	stringtie -o $HOME/data/${output_name}.gtf --rf -G $HOME/data/reference_annotation_ALL.gtf ${BAM_file}
 done
+

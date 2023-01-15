@@ -16,3 +16,4 @@ module add UHTS/Quality_control/RSeQC/4.0.0
 # infer the strandedness of the library used in the project using RSeQC
 # (RSeQC requires a reference genome in bed format)
 infer_experiment.py -r $HOME/data/hg38_RefSeq.bed -i $HOME/data/P1.sorted.bam > $HOME/analysis/results_strandedness.txt
+

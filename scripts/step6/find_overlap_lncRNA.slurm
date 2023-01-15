@@ -17,6 +17,6 @@ module add UHTS/Analysis/BEDTools/2.29.2
 # option -s : compare coordinates for sequences on the same strand only
 bedtools intersect \
         -a $HOME/data/meta_assembly.bed \
-        -b $HOME/data/reference_annotation_lncRNA_2.bed \
+        -b $HOME/data/reference_annotation_lncRNA.bed \
         -u \
-        -s > $HOME/analysis/transcripts_lncRNA_regions_2.tsv
+        -s > $HOME/analysis/transcripts_lncRNA_regions.tsv

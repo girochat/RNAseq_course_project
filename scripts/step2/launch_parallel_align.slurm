@@ -25,3 +25,4 @@ let i=${SLURM_ARRAY_TASK_ID}+${nb_pairs}
 # launch the alignment for each pair of files
 $HOME/scripts/align_to_ref_genome.sh ${paired_files[$SLURM_ARRAY_TASK_ID]} ${paired_files[$i]} 
 
+

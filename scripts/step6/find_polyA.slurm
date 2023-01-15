@@ -20,4 +20,4 @@ bedtools intersect \
 	-a $HOME/data/meta_assembly_polyA.bed \
 	-b $HOME/data/polyAsite_human_pruned.bed \
 	-u \
-	-s > $HOME/analysis/transcripts_with_polyA.tsv
+	-s > $HOME/analysis/transcripts_polyA.tsv
