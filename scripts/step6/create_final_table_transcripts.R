@@ -1,4 +1,4 @@
-setwd("/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/")
+setwd("/Users/girochat/Documents/Giliane/Bioinformatics/Master/RNA\ Sequencing/Project")
 
 # create a final table with all possible features found for the transcripts :
 # DE results, TSS, polyAsite, intergenic, lncRNA regions, protein coding potential, known biotype 
@@ -16,11 +16,11 @@ import_table <- function(filename, col, feature_type){
 
 
 # import table with all transcripts found in the meta-assembly
-table_T <- read.delim("analysis/transcripts_genes_id.tsv.sorted")
+table_T <- read.delim("analysis/transcripts_length.tsv")
 table_T[table_T$known_status == 0, 3] <- "Unknown"
 table_T[table_T$known_status == 1, 3] <- "Known"
-table_T[table_T$single_exon == 0, 4] <- "No"
-table_T[table_T$single_exon == 1, 4] <- "Yes"
+table_T[table_T$single_exon == 0, 5] <- "No"
+table_T[table_T$single_exon == 1, 5] <- "Yes"
 
 # import table about DE (keep only columns about DE)
 table_DE <- (read.delim("analysis/transcripts_DE.tsv"))[, c(1, 5, 6, 7, 8, 9)]
@@ -61,21 +61,21 @@ final_table <- merge(final_table, table_interG, all.x = T)
 final_table$intergenic[is.na(final_table$intergenic)] <- "No"
 
 final_table <- merge(final_table, table_biotype, all.x =T)
-final_table[is.na(final_table$ref_biotype), 10] <- "unknown"
+final_table[is.na(final_table$ref_biotype), 11] <- "unknown"
 biotype <- unique(final_table$ref_biotype)
 
 # add an additional column grouping the biotypes into four subgroups :
 # prot_coding, lncRNA, other, unknown
 final_table["type"] <- "other"
-final_table[final_table$ref_biotype == "unknown", 11] <- "unknown"
-final_table[final_table$ref_biotype == "protein_coding", 11] <- "prot_coding"
+final_table[final_table$ref_biotype == "unknown", 12] <- "unknown"
+final_table[final_table$ref_biotype == "protein_coding", 12] <- "prot_coding"
 final_table[final_table$ref_biotype == "lincRNA" | 
               final_table$ref_biotype == "non-coding" |
               final_table$ref_biotype == "antisense" |
               final_table$ref_biotype == "retained_intron" |
               final_table$ref_biotype == "sense_intronic" |
               final_table$ref_biotype == "sense_overlapping" |
-              final_table$ref_biotype == "3prime_overlapping_ncrna", 11] <- "lncRNA"
+              final_table$ref_biotype == "3prime_overlapping_ncrna", 12] <- "lncRNA"
 
 final_table <- merge(final_table, table_DE, all.x = T)
 
@@ -84,5 +84,4 @@ write.table(final_table, "analysis/final_table_all.tsv", sep = "\t", quote = F,
             row.names = F)
 write.table(final_table[!is.na(final_table$pval), ], "analysis/final_table_DE.tsv", 
             sep = "\t", quote = F, row.names = F )
-
 

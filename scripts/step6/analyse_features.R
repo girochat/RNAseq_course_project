@@ -1,4 +1,4 @@
-setwd("/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/")
+setwd("/Users/girochat/Documents/Giliane/Bioinformatics/Master/RNA\ Sequencing/Project")
 
 # calculate statistics about the different analysed features
 
@@ -62,9 +62,9 @@ write.table(stat, "analysis/final_stat_known_T.tsv", sep = "\t", quote = F,
 
 # select only the unknown transcripts
 table_unknown <- table[table$known_status == "Unknown", ]
-sum(!is.na(table_unknown$pval))
-sum(table_unknown$intergenic == "Yes"  & table_unknown$PC_potential == "Yes" &
-      table_unknown$polyAsite == "Yes" & table_unknown$TSS == "Yes" & !is.na(table_unknown$pval))
+
+# verify if there are some DE transcripts of length < 200 (relevant for the lncRNAs search)
+sum(table_unknown$length < 200 & !is.na(table_unknown$pval))   # result = 0
 
 # create column of statistics for the following features : TSS&polyA, intergenic
 # prot_cod_potential, lncRNA_potential, 
