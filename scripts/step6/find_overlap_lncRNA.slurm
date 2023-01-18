@@ -14,9 +14,11 @@ HOME=/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat
 module add UHTS/Analysis/BEDTools/2.29.2
 
 # find transcripts that overlap known lncRNA sequences
+# option -u : outputs transcript that matches a polyA site only once
 # option -s : compare coordinates for sequences on the same strand only
 bedtools intersect \
         -a $HOME/data/meta_assembly.bed \
         -b $HOME/data/reference_annotation_lncRNA.bed \
         -u \
         -s > $HOME/analysis/transcripts_lncRNA_regions.tsv
+
