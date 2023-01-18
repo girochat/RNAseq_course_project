@@ -76,15 +76,33 @@ write_tsv(stat_DE_T, "analysis/stat_transcripts_DE.tsv")
 # Visualisations
 ################
 
-pdf("analysis/Volcano_plot_transcripts.pdf")
+# get the gene name of the top 15 DE transcripts for the volcano plot
+top <- data.frame(transcript_id=T_table_wt$target_id, qval = T_table_wt$qval)
+top <- merge(top, table_transcript_gene)
+top <- top[order(top$qval),]
+top$gene_name[16:76977] <- ""
+adj_qval <- -log10(T_table_wt$qval)
+
+# draw a volcano plot of the DE transcripts
+jpeg("analysis/volcano_plot_transcripts.jpeg")
 
 volcano_plot <- plot_volcano(so, test = "conditionParaclonal", 
-                             test_type='wt', sig_level = 0.05)
-volcano_plot <- volcano_plot + labs(x = "log2FC", title = "Volcano Plot", 
-                                    subtitle = "Transcript-level DE") 
-volcano_plot <- volcano_plot + geom_vline(xintercept = c(-1, 1), 
-                                          aes(color = "grey", linetype = "longdash"))
-volcano_plot
+                             test_type='wt', sig_level = 0.05) + 
+  theme_bw() +
+  geom_text(aes(T_table_wt$b, adj_qval, label = top$gene_name), 
+            hjust = 0, 
+            vjust = 0,
+            nudge_y = 0.8, 
+            size=3, 
+            inherit.aes = F,
+            check_overlap = T) + 
+  labs(x = "log2FC", title = "Volcano Plot", subtitle = "Transcript-level DE") +
+  xlim(-15, 15) +
+  geom_vline(aes(xintercept = 1), color = "black", linetype = "longdash") +
+  geom_vline(aes(xintercept = -1), color = "black", linetype = "longdash") +
+  geom_vline(aes(xintercept = 0), color = "lightgrey", linetype = "solid")
+
+volcano_plot 
 
 dev.off()
 
