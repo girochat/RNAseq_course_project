@@ -6,19 +6,19 @@ This project aims at assembling the transcriptome of two particular cell subpopu
 
 ## Workflow of the project :
 
-* Step 1 - Qualitative and Quantitative analysis
+* Step 1 - Qualitative and Quantitative analysis \
 The first step of the workflow is to check the quality of the reads after the sequencing process and to quantify the total number of reads for each replicate.
-* Step 2 - Alignment
+* Step 2 - Alignment \
 The second step involves mapping the reads to the human reference genome.
-* Step 3 - Transcriptome assembly
+* Step 3 - Transcriptome assembly \
 The third step consists of assembling the previously aligned reads into biologically relevant genomic sequences (transcripts, exons...). To do so, a reference annotation of the human genome is used. All assemblies obtained from each replicate, parental and paraclonal taken together, is then merged into one meta-assembly.
-* Step 4 - Quantification
+* Step 4 - Quantification \
 For the fourth step of the analysis, the abundance of reads per transcript relative to the meta-assembly obtained at step 3 will be estimated. 
-* Step 5 - Differential expression analysis
+* Step 5 - Differential expression analysis \
 The fifth step of the workflow consists in the differential analysis of gene and transcript expression between the two cell subpopulations, the parental cell subpopulation serving as control.
-* Step 6 - Integrative analysis
+* Step 6 - Integrative analysis \
 The sixth and last step involves searching for transcription start site and polyA site in the vicinity of the detected transcripts from the assembly. This analysis concerns in particular novel transcripts and genes previously identified. Possible presence of those novel transcripts in intergenic regions or lncRNAs annotated regions as well as their protein coding potential is also determined.
-* Step 7 - Prioritisation
+* Step 7 - Prioritisation \
 The last step consists of making a ranked list of transcripts as potential lncRNAs considering the results obtained during the whole project.
 
 ## Data and Directories :
