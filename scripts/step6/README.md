@@ -44,7 +44,7 @@ The resulting table of transcripts "transcripts_lncRNA_regions.tsv" can be found
 `sbatch fetch_transcripts_length.slurm` \
 The result "transcripts_length.tsv" is stored in the analysis directory.
 * To get a table with the biotype of the transcripts from the reference annotation: \
-`./get_biotype_ref_annot.sh`
+`./get_biotype_ref_annot.sh` \
 It results in a table of transcript ID and their corresponding biotype "transcripts_biotype.tsv" in the analysis directory.
 * To create a final table summarising all possible features of a transcript, use the R script "create_final_table_transcripts.R" in Rstudio (version 4.2.1). To obtain statistics about the different analysed features, use the R script "analyse_features.R". \
 The final tables for all transcripts "final_table_all.tsv" and for the DE ones "final_table_DE.tsv" are stored in the analysis directory, as well as the tables of statistics for the known ("final_stat_known_T.tsv") and unknown ("final_stat_unknown_T.tsv") transcripts.
