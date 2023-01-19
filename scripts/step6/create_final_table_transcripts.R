@@ -35,10 +35,10 @@ table_polyA <- import_table("analysis/transcripts_polyA.tsv", 4, "polyAsite")
 table_PC_pot <- (read.delim("analysis/transcripts_prot_cod.tsv"))[, c(1, 8)]
 colnames(table_PC_pot) <- c("transcript_id", "PC_potential")
 
-# import table about lncRNA potential (overlap with known lncRNA sequences)
-table_lncRNA_pot <- import_table("analysis/transcripts_lncRNA_regions.tsv", 4, "lncRNA_pot")
+# import table about transcripts in lncRNA regions 
+table_lncRNAregions <- import_table("analysis/transcripts_lncRNA_regions.tsv", 4, "lncRNAregions")
 
-# import table about intergenic
+# import table about intergenic transcripts
 table_interG <- import_table("analysis/transcripts_intergenic.tsv", 4, "intergenic")
 
 # import the table about the biotypes and select only the columns transcript ID and type
@@ -54,8 +54,8 @@ final_table$polyAsite[is.na(final_table$polyAsite)] <- "No"
 
 final_table <- merge(final_table, table_PC_pot, all.x = T)
 
-final_table <- merge(final_table, table_lncRNA_pot, all.x = T)
-final_table$lncRNA_pot[is.na(final_table$lncRNA_pot)] <- "No"
+final_table <- merge(final_table, table_lncRNAregions, all.x = T)
+final_table$lncRNAregions[is.na(final_table$lncRNAregions)] <- "No"
 
 final_table <- merge(final_table, table_interG, all.x = T)
 final_table$intergenic[is.na(final_table$intergenic)] <- "No"

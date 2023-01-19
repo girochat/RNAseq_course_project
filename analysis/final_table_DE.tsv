@@ -1,4 +1,4 @@
-transcript_id	gene_name	known_status	length	single_exon	TSS	polyAsite	PC_potential	lncRNA_pot	intergenic	ref_biotype	type	pval	qval	esti_log2FC	mean_obs_control	mean_obs_condition
+transcript_id	gene_name	known_status	length	single_exon	TSS	polyAsite	PC_potential	lncRNAregions	intergenic	ref_biotype	type	pval	qval	esti_log2FC	mean_obs_control	mean_obs_condition
 ENST00000002165.8	FUCA2	Known	16879	No	Yes	Yes	coding	No	No	protein_coding	prot_coding	0.00142251362373591	0.0381507249629159	0.455983109160114	11.1257299684111	11.5817130775712
 ENST00000002596.5	HS3ST1	Known	36615	No	No	No	coding	No	No	protein_coding	prot_coding	0.000439125519994981	0.0164010505350091	-4.18275453857157	4.48866129583522	0.305906757263646
 ENST00000003912.5	NIPAL3	Known	57173	No	Yes	Yes	coding	No	No	protein_coding	prot_coding	6.29112786888434e-06	0.000574462811344139	0.903993565006927	8.3078246120133	9.21181817702023

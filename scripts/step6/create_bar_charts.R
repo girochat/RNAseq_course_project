@@ -1,7 +1,7 @@
 library(ggplot2)
 library(gridExtra)
 
-setwd("/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/")
+setwd("/Users/girochat/Documents/Giliane/Bioinformatics/Master/RNA\ Sequencing/Project")
 
 # function to create dataframe with transcripts having a specific feature
 create_df_feature <- function(table, col, feature, val, panel, exon = FALSE){
@@ -23,6 +23,9 @@ create_df_feature <- function(table, col, feature, val, panel, exon = FALSE){
 # import the table of DE transcripts with all features
 table <- read.delim("analysis/final_table_DE.tsv")
 
+# Known transcripts
+###################
+
 # create dataframes of specific features to plot the bar chart with ggplot
 # (only for the DE transcripts)
 n <- length(table$transcript_id)
@@ -30,14 +33,16 @@ ALL <- data.frame(Transcript = rep("Transcripts", length=n),
                 feature = rep("Total", length=n), 
                 panel = rep("DE", length=n))
 
-type_PC <- create_df_feature(table, 11, "Protein coding", "prot_coding", "DE")
+type_PC <- create_df_feature(table, 12, "Protein coding", "prot_coding", "DE")
 
-type_lncRNA <- create_df_feature(table, 11, "lncRNA", "lncRNA", "DE")
+type_lncRNA <- create_df_feature(table, 12, "lncRNA", "lncRNA", "DE")
 
-type_other <- create_df_feature(table, 11, "Other", "other", "DE")
+type_other <- create_df_feature(table, 12, "Other", "other", "DE")
 
-type_unknown <- create_df_feature(table, 11, "Unknown", "unknown", "DE")
+type_unknown <- create_df_feature(table, 12, "Unknown", "unknown", "DE")
 
+# Novel transcripts
+####################
 
 # select only the DE transcripts that are novel
 table_novel <- table[table$known_status == "Unknown", ]
@@ -47,24 +52,24 @@ table_novel <- table[table$known_status == "Unknown", ]
 novel_ALL <- create_df_feature(table, 3, "Total", "Unknown", "DE & Novel")
 
 table_novel_TSS <- table_novel[table_novel$TSS == "Yes",]
-novel_TSS_polyA <- create_df_feature(table_novel_TSS, 6, "TSS & polyA", "Yes", 
+novel_TSS_polyA <- create_df_feature(table_novel_TSS, 7, "TSS & polyA", "Yes", 
                                      panel = "DE & Novel")
 
-novel_PCpot <- create_df_feature(table_novel, 7, "Potential prot. coding", "coding", 
+novel_PCpot <- create_df_feature(table_novel, 8, "Potential prot. coding", "coding", 
                                      panel = "DE & Novel")
 
-novel_lncRNApot <- create_df_feature(table_novel, 8, "Potential lncRNA", "Yes", 
+novel_lncRNApot <- create_df_feature(table_novel, 8, "Potential lncRNA", "noncoding", 
                                      panel = "DE & Novel")
 
-novel_interG <- create_df_feature(table_novel, 9, "Intergenic", "Yes", 
+novel_interG <- create_df_feature(table_novel, 10, "Intergenic", "Yes", 
                                   panel = "DE & Novel")
 
 
 table_novel_TSS_polyA <- table_novel_TSS[table_novel_TSS$polyAsite == "Yes",]
-novel_PC_TSS_polyA <- create_df_feature(table_novel_TSS_polyA, 7, "High conf. prot. coding", "coding", 
+novel_PC_TSS_polyA <- create_df_feature(table_novel_TSS_polyA, 8, "High conf. prot. coding", "coding", 
                                         panel = "DE & Novel")
 
-novel_lncRNA_TSS_polyA <- create_df_feature(table_novel_TSS_polyA, 8, "High conf. lncRNA", "Yes", 
+novel_lncRNA_TSS_polyA <- create_df_feature(table_novel_TSS_polyA, 8, "High conf. lncRNA", "noncoding", 
                                         panel = "DE & Novel")
 
 
