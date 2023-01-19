@@ -18,7 +18,8 @@ For the fourth step of the analysis, the abundance of reads per transcript relat
 The fifth step of the workflow consists in the differential analysis of gene and transcript expression between the two cell subpopulations, the parental cell subpopulation serving as control.
 * Step 6 - Integrative analysis
 The sixth and last step involves searching for transcription start site and polyA site in the vicinity of the detected transcripts from the assembly. This analysis concerns in particular novel transcripts and genes previously identified. Possible presence of those novel transcripts in intergenic regions or lncRNAs annotated regions as well as their protein coding potential is also determined.
-
+* Step 7 - Prioritisation
+The last step consists of making a ranked list of transcripts as potential lncRNAs considering the results obtained during the whole project.
 
 ## Data and Directories :
 
@@ -27,6 +28,6 @@ The scripts directory contains all the scripts used at each step of the workflow
 The data directory contains symbolic links to the raw data from the sequencing and any data used at the different steps of the workflow (reference annotation file, index files, fantom5 TSS peaks file...). Any data generated during the steps of the workflow was stored under the data directory.\
 The analysis directory contains the results of any analysis performed on the data obtained at the different steps.
 
-Path for the repository of this project on the IBU cluster : `/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/`
+Path for the repository of this project on the IBU cluster : `/data/courses/rnaseq_course/lncRNAs/Project2/users/grochat/`   
 Link for the repository of this project on GitHub.com : <https://github.com/girochat/RNAseq_course_project>
 
